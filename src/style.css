@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  line-height: 1.6;
+  margin: 0;
+  background-color: #f7f9fc; /* Lighter, cleaner background */
+  color: #333;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  text-align: center;
+  color: #2c5282; /* A deeper, more refined blue */
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Increased gap for better separation */
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 30px; /* Increased padding */
+  border-radius: 12px; /* Softer border radius */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08); /* Softer, more diffused shadow */
+  max-width: 700px; /* Constrain width for better readability on wider screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 500; /* Slightly less bold */
+  color: #4a5568; /* Darker grey for labels */
+  font-size: 0.9rem;
+}
+
+textarea,
+select {
+  width: 100%;
+  padding: 12px 15px; /* Increased padding */
+  border: 1px solid #cbd5e0; /* Softer border color */
+  border-radius: 8px; /* Softer radius */
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #2d3748;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #4299e1; /* Blue focus color */
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Focus ring */
+}
+
+textarea:read-only {
+  background-color: #edf2f7; /* Lighter readonly background */
+  color: #718096;
+}
+
+button {
+  padding: 12px 20px; /* Increased padding */
+  background-color: #3182ce; /* Primary blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+button:hover:not(:disabled) {
+  background-color: #2b6cb0; /* Darker blue on hover */
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+button:disabled {
+  background-color: #a0aec0; /* Softer disabled color */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Styles for the posts history */
+#postsHistoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-entry {
+  border: 1px solid #e2e8f0; /* Softer border */
+  padding: 20px;
+  border-radius: 10px; /* Softer radius */
+  background-color: #fdfdff; /* Slightly off-white for entries */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for entries */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post-entry textarea.post-text {
+  background-color: #f7fafc; /* Different background for readonly text areas in posts */
+  border-color: #e2e8f0;
+}
+
+.post-entry .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-entry .controls .char-count {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #718096; /* Softer grey for char count */
+}
+
+.post-entry .controls div button {
+  /* Target buttons within the controls specifically */
+  padding: 8px 15px; /* Smaller buttons for post entries */
+  font-size: 0.9rem;
+}
+
+.post-entry .controls div button.share-post-button {
+  margin-left: 10px;
+  background-color: #48bb78; /* Green for share */
+}
+
+.post-entry .controls div button.share-post-button:hover:not(:disabled) {
+  background-color: #38a169; /* Darker green */
+}
+
+/* Refinement Modal Styles */
+#refineOptionsModal {
+  border: 1px solid #e2e8f0;
+  padding: 25px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* More prominent shadow for modal */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#refineOptionsModal h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #2c5282;
+  text-align: center;
+  font-weight: 600;
+}
+
+#refineOptionsModal div.refine-option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#refineOptionsModal label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+#refineOptionsModal select {
+  font-size: 1rem; /* Match other inputs */
+}
+
+#refineOptionsModal .modal-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+#refineOptionsModal #applyRefinementButton {
+  /* Uses default button styling */
+}
+
+#refineOptionsModal #cancelRefinementButton {
+  background-color: #718096; /* Grey for cancel */
+}
+
+#refineOptionsModal #cancelRefinementButton:hover:not(:disabled) {
+  background-color: #4a5568; /* Darker grey */
+}
+
+/* General status messages - Floating Toast Style */
+.status {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px; /* Larger padding for toast */
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+  z-index: 1000;
+  min-width: 300px; /* Wider toast */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for toast */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff; /* White text for better contrast on colored backgrounds */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.status.error {
+  background-color: #e53e3e; /* Red for error */
+  border: none; /* Remove border for cleaner look */
+}
+
+.status.info {
+  background-color: #3182ce; /* Blue for info */
+  border: none;
+}
+
+/* Animation for toast appearing */
+.status[style*="display: block"] {
+  /* Target when display is block */
+  animation: toastIn 0.3s ease forwards;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

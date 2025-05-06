@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluesky Post Assistant (Vite)</title>
+  <!-- CSS will be imported via main.js -->
+</head>
+
+<body>
+  <h1>Post Assistant for Bluesky</h1>
+
+  <div id="statusArea" class="status"></div>
+
+  <div class="container" style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="input-section">
+      <label for="promptInput">Enter your prompt:</label>
+      <textarea id="promptInput" rows="5"
+        placeholder="e.g., Write a short post about the benefits of using built-in AI APIs..."></textarea>
+      <button id="generateButton">Generate Draft</button>
+    </div>
+
+    <!-- Container for the history of posts -->
+    <div id="postsHistoryContainer">
+      <!-- Posts will be appended here by JavaScript -->
+    </div>
+
+    <!-- Refinement options modal/dialog (initially hidden) -->
+    <div id="refineOptionsModal" style="display: none;">
+      <h3>Refine Options</h3>
+      <div class="refine-option-group">
+        <label for="refineTone">Tone:</label>
+        <select id="refineTone">
+          <option value="as-is">As Is</option>
+          <option value="more-formal">More Formal</option>
+          <option value="more-casual">More Casual</option>
+        </select>
+      </div>
+      <div class="refine-option-group">
+        <label for="refineFormat">Format:</label>
+        <select id="refineFormat">
+          <option value="as-is">As Is</option>
+          <option value="plain-text">Plain Text</option>
+          <option value="markdown">Markdown</option>
+        </select>
+      </div>
+      <div class="refine-option-group">
+        <label for="refineLength">Length:</label>
+        <select id="refineLength">
+          <option value="as-is">As Is</option>
+          <option value="shorter">Shorter</option>
+          <option value="longer">Longer</option>
+        </select>
+      </div>
+      <div class="modal-buttons-container">
+        <button id="applyRefinementButton">Apply Refinement</button>
+        <button id="cancelRefinementButton">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Template for a single post entry (will be cloned by JS) -->
+  <template id="postEntryTemplate">
+    <div class="post-entry" style="border: 1px solid #eee; padding: 10px; margin-bottom: 10px;">
+      <textarea class="post-text" rows="7" readonly></textarea>
+      <div class="controls"
+        style="margin-top: 5px; display: flex; justify-content: space-between; align-items: center;">
+        <span class="char-count">0 / 300</span>
+        <div>
+          <button class="refine-post-button">Refine</button>
+          <button class="share-post-button" style="margin-left: 5px;">Share on Bluesky</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
